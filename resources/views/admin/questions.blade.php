@@ -1,4 +1,7 @@
 @extends('layouts.admin.layout')
+@section('title')
+<title>Questions | Admin Panel</title>
+@endsection
 @section('content')
 
 

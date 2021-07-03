@@ -1,4 +1,7 @@
 @extends('layouts.admin.layout')
+@section('title')
+<title>Refund Details | Admin Panel</title>
+@endsection
 @section('content')
 
 <div>

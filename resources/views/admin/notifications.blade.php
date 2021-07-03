@@ -1,4 +1,7 @@
 @extends('layouts.admin.layout')
+@section('title')
+<title>Notifications | Admin Panel</title>
+@endsection
 @section('content')
 
 <div class="mb-2 mt-2 ">

@@ -1,4 +1,8 @@
 @extends('layouts.admin.layout')
+@section('title')
+<title>Question Details | Admin Panel</title>
+@endsection
+
 @section('content')
 
 <div class="bg-white px-5 py-3 mb-3  rounded shadow">    

@@ -1,4 +1,7 @@
 @extends('layouts.admin.layout')
+@section('title')
+<title>Wallet | Admin Panel</title>
+@endsection
 @section('content')
 
 <div class="flex justify-center lg:w-1/3 " >

@@ -1,4 +1,7 @@
 @extends('layouts.admin.layout')
+@section('title')
+<title>Doctors | Admin Panel</title>
+@endsection 
 @section('content')
 
 <div>
@@ -13,107 +16,30 @@
         </tr>
     </thead>
     <tbody>
+        @if($doctors)
+        @foreach($doctors as $doctor)
         <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Doctor Name</span>
-                KnobHome
+                {{ $doctor->full_name }}
             </td>
             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Country</span>
-                German
+                {{ $doctor->chamber }}
             </td>
           	<td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
-                <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold">Active</span>
+                <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold">{{ $doctor->status }}</span>
           	</td>
             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
-                <a href="/doctors/1" class="text-blue-400 hover:text-blue-600 underline">Profile</a>
+                <a href="/doctors/{{ $doctor->id }}" class="text-blue-400 hover:text-blue-600 underline">Profile</a>
                 <a href="#" class="text-blue-400 hover:text-blue-600 underline">Update</a>
                 <a href="#" class="text-blue-400 hover:text-blue-600 underline ">Block</a>
             </td>
         </tr>
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Doctor Name</span>
-                KnobHome
-            </td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Country</span>
-                German
-            </td>
-          	<td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
-                <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold">Active</span>
-          	</td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Profile</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Update</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline ">Block</a>
-            </td>
-        </tr>
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Doctor Name</span>
-                KnobHome
-            </td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Country</span>
-                German
-            </td>
-          	<td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
-                <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold">Active</span>
-          	</td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Profile</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Update</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline ">Block</a>
-            </td>
-        </tr>
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Doctor Name</span>
-                KnobHome
-            </td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Country</span>
-                German
-            </td>
-          	<td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
-                <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">deleted</span>
-          	</td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Profile</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Update</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline ">Block</a>
-            </td>
-        </tr>
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Doctor Name</span>
-                KnobHome
-            </td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Country</span>
-                German
-            </td>
-          	<td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
-                <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">deleted</span>
-          	</td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Profile</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline">Update</a>
-                <a href="#" class="text-blue-400 hover:text-blue-600 underline ">Block</a>
-            </td>
-        </tr>
-        
+        @endforeach
+        @endif      
         
         
     </tbody>

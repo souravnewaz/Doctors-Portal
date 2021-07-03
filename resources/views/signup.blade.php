@@ -32,7 +32,7 @@
             <input 
                 type="text"
                 class="block border border-grey-light w-full p-3 rounded mb-4"
-                name="name"
+                name="full_name"
                 placeholder="Full Name" />
 
             <input 
@@ -49,7 +49,7 @@
             <input 
                 type="password"
                 class="block border border-grey-light w-full p-3 rounded mb-4"
-                name="confirm_password"
+                name="password_confirmation"
                 placeholder="Confirm Password" />
 
             <button
